@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { FileUploader } from './componnent/fileUploader';
+import { Jumbotron } from 'reactstrap';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Jumbotron >
+  
+      <h1> Please upload the picture</h1>
+
+      <p>file will auto upload as soon as you choose it </p>
+      
+      
+      <Router>
+        <Switch>
+       
+          <Route path='/add1' component={FileUploader}/>
+        </Switch>
+      </Router>
+    
+      </Jumbotron>
+      
+
     </div>
   );
 }
